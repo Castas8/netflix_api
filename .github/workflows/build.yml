@@ -1,0 +1,23 @@
+name: Docker Build & Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs: 
+    build-and-publish:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Clonar mi repositorio
+          uses: actions/checkout@v4
+
+        - name: Login a docker hub
+          run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+        - name: Crear la imagen
+          run: docker build -t casta10/netflix_db:latest .
+
+        - name: Publicar la imagen
+          run: docker push casta10/netflix_db:latest
+
