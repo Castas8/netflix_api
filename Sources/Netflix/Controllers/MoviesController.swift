@@ -1,6 +1,6 @@
 import Vapor
 struct MoviesController: RouteCollection {
-    func boot(routes: RoutesBuilder) throws {
+    func boot(routes: any RoutesBuilder) throws {
         let moviesRoute = routes.grouped("movies")
         moviesRoute.get(use: getAllMovies)
         moviesRoute.post(use: createMovie)

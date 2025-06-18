@@ -1,7 +1,7 @@
 import Fluent
 import Vapor
 struct SVController: RouteCollection {
-    func boot(routes: RoutesBuilder) throws {
+    func boot(routes: any RoutesBuilder) throws {
         let svRoute = routes.grouped("sv")
         svRoute.get(use: getAll)
         svRoute.post(use: create)
