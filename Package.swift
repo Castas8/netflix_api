@@ -24,9 +24,9 @@ let package = Package(
             ],
             swiftSettings: swiftSettings
         )
-        // testTarget eliminado
     ]
 )
+
 
 var swiftSettings: [SwiftSetting] { [
     .enableUpcomingFeature("ExistentialAny"),
