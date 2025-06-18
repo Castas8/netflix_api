@@ -3,7 +3,6 @@ import Vapor
 
 final class Movie: Model, Content, @unchecked Sendable{
     static let schema = "Movie"
-    
     @ID(key: .id)
     var id: UUID?
     
@@ -12,7 +11,7 @@ final class Movie: Model, Content, @unchecked Sendable{
     
     @Field(key: "description")
     var description: String
-
+    
     @Field(key: "rating")
     var rating: Double
     
@@ -23,10 +22,9 @@ final class Movie: Model, Content, @unchecked Sendable{
     var duration: String
     
     @Field(key: "image")
-        var image: String
+    var image: String
     
     init () {}
-
     init(id: UUID? = nil, title: String, description: String, release: Date, rating: Double, duration: String, image: String) {
         self.id = id
         self.title = title
